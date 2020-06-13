@@ -1,0 +1,532 @@
+.qwe {
+    width: 30px;
+    height: 30px;
+}
+.priceForAll {
+    width: 20%;
+    display: inline;
+}
+div .display_show {
+    display: block;
+}
+
+div .display_none {
+    display: none;
+}
+/*Выпадающее меню*/
+/*------------------------------------*\
+    НАВИГАЦИЯ
+\*------------------------------------*/
+/*#nav{*/
+    /*float:left;*/
+    /*width:100%;*/
+    /*list-style:none;*/
+    /*font-weight:bold;*/
+    /*margin-bottom:10px;*/
+/*}*/
+/*#nav li{*/
+    /*float:left;*/
+    /*margin-right:10px;*/
+    /*position:relative;*/
+    /*display:block;*/
+/*}*/
+/*#nav li a{*/
+    /*display:block;*/
+    /*padding:5px;*/
+    /*color:#fff;*/
+    /*background:#333;*/
+    /*text-decoration:none;*/
+/*text-shadow:1px 1px 1px rgba(0,0,0,0.75); /!* Тень текста, чтобы приподнять его на немного *!/*/
+    /*-moz-border-radius:2px;*/
+    /*-webkit-border-radius:2px;*/
+    /*border-radius:2px;*/
+/*}*/
+/*#nav li a:hover{*/
+    /*color:#fff;*/
+    /*background:#6b0c36;*/
+    /*background:rgba(107,12,54,0.75); /!* Выглядит полупрозрачным *!/*/
+    /*text-decoration:underline;*/
+/*}*/
+
+#nav li{
+position:relative;
+}
+
+/*--- ВЫПАДАЮЩИЕ ПУНКТЫ ---*/
+#nav ul{
+    list-style:none;
+    position:absolute;
+    left:-9999px; /* Скрываем за экраном, когда не нужно (данный метод лучше, чем display:none;) */
+    opacity:0; /* Устанавливаем начальное состояние прозрачности */
+    -webkit-transition:0.25s linear opacity; /* В Webkit выпадающие пункты будут проявляться */
+}
+#nav ul li{
+    padding-top:1px; /* Вводим отступ между li чтобы создать иллюзию разделенных пунктов меню */
+    float:none;
+}
+#nav ul a{
+    white-space:nowrap; /* Останавливаем перенос текста и создаем многострочный выпадающий пункт */
+    display:block;
+}
+#nav li:hover ul{ /* Выводим выпадающий пункт при наведении курсора */
+    left:0; /* Приносим его обратно на экран, когда нужно */
+    opacity:1; /* Делаем непрозрачным */
+}
+#nav li:hover a{ /* Устанавливаем стили для верхнего уровня, когда выводится выпадающий список */
+    background:#D3D3D3;
+    /*background:rgba(107,12,54,0.75); /* Выглядит полупрозрачным */
+    /*background:rgba(211,211,211,0.75); /!* Выглядит полупрозрачным *!/*/
+    text-decoration:underline;
+}
+#nav li:hover ul a{ /* Изменяем некоторые стили верхнего уровня при выводе выпадающего пункта */
+    text-decoration:none;
+    -webkit-transition:-webkit-transform 0.075s linear;
+}
+#nav li:hover ul li a:hover{ /* Устанавливаем стили для выпадающих пунктов, когда курсор наводится на конкретный пункт */
+    background:#333;
+    /*background:rgba(51,51,51,0.75); /!* Будет полупрозрачным *!/*/
+    text-decoration:underline;
+    -moz-transform:scale(1.05);
+    -webkit-transform:scale(1.05);
+}
+.vertical-center {
+    vertical-align: middle;
+}
+.with-bottom-margin {
+    padding-bottom: 30px;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.alert h4 {
+    margin-top: 0;
+    color: inherit;
+}
+.alert .alert-link {
+    font-weight: bold;
+}
+.alert > p,
+.alert > ul {
+    margin-bottom: 0;
+}
+.alert > p + p {
+    margin-top: 5px;
+}
+.alert-dismissable,
+.alert-dismissible {
+    padding-right: 35px;
+}
+.alert-dismissable .close,
+.alert-dismissible .close {
+    position: relative;
+    top: -2px;
+    right: -21px;
+    color: inherit;
+}
+.alert-success {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #3c763d;
+}
+.alert-success hr {
+    border-top-color: #c9e2b3;
+}
+.alert-success .alert-link {
+    color: #2b542c;
+}
+.alert-info {
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    color: #31708f;
+}
+.alert-info hr {
+    border-top-color: #a6e1ec;
+}
+.alert-info .alert-link {
+    color: #245269;
+}
+.alert-warning {
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+    color: #8a6d3b;
+}
+.alert-warning hr {
+    border-top-color: #f7e1b5;
+}
+.alert-warning .alert-link {
+    color: #66512c;
+}
+.alert-danger {
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    color: #a94442;
+}
+.alert-danger hr {
+    border-top-color: #e4b9c0;
+}
+.alert-danger .alert-link {
+    color: #843534;
+}
+.num_in_tbl {
+    width: 4em;
+    font-size: 20px;
+    margin-bottom: 7px;
+    border: 4px double black;
+}
+.button-3, .button-4 {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 12px;
+    color: #fff;
+    font-weight: bold;
+    font-family: 'Open Sans Condensed', sans-serif;
+    padding: 10px;
+}
+.button-3 {
+    background: #353535;
+    text-transform: none;
+}
+.button-4 {
+    background: #808080;
+    margin-top: 10px;
+    width: 85px;
+}
+.float-r {
+    float: right;
+}
+
+.float-l {
+    float: left;
+}
+.totalSum {
+    font-size: 21px;
+    /*margin: 10px auto;*/
+    text-align: center;
+}
+.cnt {
+    text-align: center;
+}
+.gasket {
+    height: 20px;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 18px;
+    line-height: 1.42857143;
+    color: #555555;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.form-control:focus {
+    border-color: #66afe9;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+.form-control::-moz-placeholder {
+    color: #999999;
+    opacity: 1;
+}
+.form-control:-ms-input-placeholder {
+    color: #999999;
+}
+.form-control::-webkit-input-placeholder {
+    color: #999999;
+}
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+    cursor: not-allowed;
+    background-color: #eeeeee;
+    opacity: 1;
+}
+textarea.form-control {
+    height: auto;
+}
+.control-label {
+    font-size: 22px;
+}
+.col-md-6 {
+    margin-bottom: 20px;
+}
+.with-bg {
+    background-color: #eeeeee;
+    padding: 10px 40px;
+}
+.purchases_cart {
+    float: left;
+    width: 200px;
+    border: 1px solid #fff;
+    margin: 20px 0 0 20px;
+    text-align: center;
+}
+.purchases_cart a {
+    color: #fff;
+    font-size: 18px;
+}
+.title-in-purchases_cart{
+    background-color: #fff;
+    color: #000;
+    /*text-align: center;*/
+}
+.need_station {
+    font-size: 18px;
+}
+table.forCheckbox {
+    margin-left: 20px;
+}
+table.forCheckbox td.labelForCheckbox {
+    padding-left: 10px;
+}
+.modal {
+    text-transform: none;
+}
+/* Стили модального окна */
+.modal-header h2 {
+    color: #555;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 1;
+    margin: 0;
+}
+/* кнопка закрытия окна */
+.modal .btn-close {
+    color: #aaa;
+    cursor: pointer;
+    font-size: 30px;
+    text-decoration: none;
+    position: absolute;
+    right: 5px;
+    top: 0;
+}
+.modal .btn-close:hover {
+    color: red;
+}
+/* слой затемнения */
+.modal-wrap:before {
+    content: "";
+    display: none;
+    background: rgba(0, 0, 0, .3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 101;
+}
+.modal-overlay {
+    bottom: 0;
+    display: none;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 102;
+}
+/* активация слоя затемнения и модального блока */
+.modal-open:checked ~ .modal-wrap:before,
+.modal-open:checked ~ .modal-wrap .modal-overlay {
+    display: block;
+}
+.modal-open:checked ~ .modal-wrap .modal-dialog {
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    top: 25%;
+}
+/* элементы модального окна */
+.modal-dialog {
+    background: #fefefe;
+    border: none;
+    border-radius: 5px;
+    position: fixed;
+    width: 80%;
+    max-width: 500px;
+    left: 50%;
+    top: -100%;
+    -webkit-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    -moz-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    -webkit-transform: translate(-50%, -500%);
+    -ms-transform: translate(-50%, -500%);
+    -o-transform: translate(-50%, -500%);
+    transform: translate(-50%, -500%);
+    -webkit-transition: -webkit-transform 0.4s ease-out;
+    -moz-transition: -moz-transform 0.4s ease-out;
+    -o-transition: -o-transform 0.4s ease-out;
+    transition: transform 0.4s ease-out;
+    z-index: 103;
+}
+.modal-body {
+    padding: 20px;
+}
+.modal-body p {
+    margin: 0;
+}
+.modal-header,
+.modal-footer {
+    padding: 20px 20px;
+}
+.modal-header {
+    border-bottom: #eaeaea solid 1px;
+}
+.modal-header h2 {
+    font-size: 20px;
+    margin: 0;
+}
+.modal-footer {
+    border-top: #eaeaea solid 1px;
+    text-align: right;
+}
+/* адаптивные картинки в модальном блоке */
+.modal-body img {
+    max-width: 100%;
+    height: auto;
+}
+/*---------------------------------------------------------------------*/
+.inlineForm {
+    display: inline;
+}
+.myBg {
+    background-color: #d3d3d3;
+}
+.sub-page {
+    min-height: calc(100vh - 194px);
+}
+.bold {
+    vertical-align: middle;
+}
+.withWidth {
+    width: 117px;
+}
+.withMarginTop5 {
+    margin-top: 5px;
+}
+.with-border {
+    border: ridge 2px;
+}
+.bigger {
+    font-size: 110%;
+}
+.button-fucking-1 {
+    background:#353535;
+    display:inline-block;
+    font-size:20px;
+    line-height:25px;
+    color:#fff;
+    font-weight:bold;
+    font-family: 'Open Sans Condensed', sans-serif;
+    padding: 5px 10px;
+}
+.button-fucking-2 {
+    display:inline-block;
+    font-size:20px;
+    line-height:25px;
+    color:#353535;
+    font-weight:bold;
+    font-family: 'Open Sans Condensed', sans-serif;
+    padding: 5px 10px;
+}
+.button-fucking-1:hover {background:#000; cursor: pointer;}
+.button-fucking-2:hover {background:#000; color:#fff;  cursor: pointer;}
+.ave {margin: 10px 0; text-align: center; color: white;}
+.about-image {
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+/*блок выбора файла*/
+.fileform {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 2px;
+    cursor: pointer;
+    height: 26px;
+    overflow: hidden;
+    padding: 2px;
+    position: relative;
+    text-align: left;
+    vertical-align: middle;
+    width: 230px;
+}
+
+.fileform .selectbutton {
+    background-color: #29AFAF;;
+    border: 1px solid #565858;
+    border-radius: 2px;
+    color: #FFFFFF;
+    float: right;
+    font-size: 16px;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    padding: 0 6px;
+    text-align: center;
+    vertical-align: middle;
+    width: 59px;
+}
+
+.fileform #upload {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    -moz-opacity: 0;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    font-size: 150px;
+    height: 30px;
+    z-index: 20;
+}
+.fileform #fileformlabel {
+    background-color: #FFFFFF;
+    float: left;
+    height: 22px;
+    line-height: 22px;
+    overflow: hidden;
+    padding: 2px;
+    text-align: left;
+    vertical-align: middle;
+    width:160px;
+}
+.btn-3-mod {
+    font-weight: normal;
+    padding: 4px;
+    visibility: hidden;
+}
+.without_background {
+    background-color: transparent;
+}
+.error-message {
+    color: red;
+}
+.message {
+    overflow:auto;
+    width: 320px;
+    padding: 25px;
+}
+.admin-comment {
+    margin: 0px;
+    width: 580px;
+    height: 120px;"
+}
+.pidor_comment {
+    width: 410px;
+}
+#user-table tbody tr td {
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+.new-search-query {
+    font-weight: bold;
+}
