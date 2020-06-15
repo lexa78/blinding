@@ -19,7 +19,7 @@ class PageHelper
     {
         $categories = Cache::remember(Category::CACHE_KEY, self::TIME_SAVE_CACHE, function () {
             return DB::table('posts')
-                ->leftJoin('categories', 'categories.id', '=', 'posts.category_id')
+                ->rightJoin('categories', 'categories.id', '=', 'posts.category_id')
                 ->select(DB::raw('COUNT(posts.id) as postsCount, categories.name, categories.id'))
                 ->groupBy('posts.category_id')
                 ->groupBy('categories.name')
