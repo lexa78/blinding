@@ -129,17 +129,19 @@ video:hover:before {
     animation: rotateglow 1.5s infinite linear;
     -webkit-animation: rotateglow 1.5s infinite linear;
 }
-
 @keyframes rotateglow
 {
     0%   {transform: rotate(0deg); text-shadow: 0 0 2px #f00; color: #f00;}
     50%  {text-shadow: 0 0 20px #0f0; color: #0f0;}
     100% {transform: rotate(360deg); text-shadow: 0 0 2px #f00; color: #f00;}
 }
-
 @-webkit-keyframes rotateglow
 {
     0%   {-webkit-transform: rotate(0deg); text-shadow: 0 0 2px #f00; color: #f00;}
     50%  {text-shadow: 0 0 40px #0f0; color: #0f0;}
     100% {-webkit-transform: rotate(360deg); text-shadow: 0 0 2px #f00; color: #f00;}
+}
+@-moz-document url-prefix()
+{
+    .b-subscribe__form-input { width: 33%; }
 }

@@ -80,7 +80,6 @@ use App\Http\Helpers\PageHelper;
             <p id="reply-title" class="b-comments__respond-title b-font b-font_family_caption">Добавить комментарий</p>
 
             <form id="w0" class="b-comments__respond-form" action="/add-comment" method="post">
-                @csrf
                 <p class="b-comments__respond-form-row b-form__row">
                     <input id="commentform-name" type="text" name="name" required placeholder="Имя или ник" class="b-comments__respond-form-input b-form__input">
                     <input id="commentform-email" type="text" name="email" required placeholder="Действующий email" class="b-comments__respond-form-input b-form__input">

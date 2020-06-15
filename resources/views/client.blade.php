@@ -191,7 +191,6 @@
         <form class="b-subscribe__form b-form" action="/subscribe" method="POST" target="_blank">
             <div class="b-subscribe__form-row b-form__row">
                 <input name="fname" class="b-subscribe__form-input b-form__input" type="text" required="required" placeholder="Ваше имя / ник...">
-                <br>
                 <input name="femail" class="b-subscribe__form-input b-form__input" type="email" required="required" placeholder="Ваш E-mail...">
                 <button class="b-subscribe__form-submit b-form__submit b-button b-button_dark">Подписаться</button>
             </div><!--/.b-subscribe__form-row.b-form__row-->
@@ -261,6 +260,7 @@
 <div id="loader-identity-container">
     <div id="loader-identity">&there4;</div>
 </div>
+@csrf
 <script src="{{ asset('/js/scripts.js') }}" async="async"></script>
 </body>
 </html>
