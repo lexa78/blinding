@@ -3950,7 +3950,7 @@ $(document).ready(function () {
   })
 }), $(function () {
   $("#send").click(function () {
-    var e = document.getElementById("text").value, t = new Array;
+    var e = document.getElementById("text").value, t = [];
     t["А"] = "A", t["а"] = "a", t["Б"] = "B", t["б"] = "b", t["В"] = "V", t["в"] = "v", t["Г"] = "G", t["г"] = "g", t["Д"] = "D", t["д"] = "d", t["Е"] = "E", t["е"] = "e", t["Ё"] = "Yo", t["ё"] = "yo", t["Ж"] = "Zh", t["ж"] = "zh", t["З"] = "Z", t["з"] = "z", t["И"] = "I", t["и"] = "i", t["Й"] = "J", t["й"] = "j", t["К"] = "K", t["к"] = "k", t["Л"] = "L", t["л"] = "l", t["М"] = "M", t["м"] = "m", t["Н"] = "N", t["н"] = "n", t["О"] = "O", t["о"] = "o", t["П"] = "P", t["п"] = "p", t["Р"] = "R", t["р"] = "r", t["С"] = "S", t["с"] = "s", t["Т"] = "T", t["т"] = "t", t["У"] = "U", t["у"] = "u", t["Ф"] = "F", t["ф"] = "f", t["Х"] = "X", t["х"] = "x", t["Ц"] = "C", t["ц"] = "c", t["Ч"] = "Ch", t["ч"] = "ch", t["Ш"] = "Sh", t["ш"] = "sh", t["Щ"] = "Shh", t["щ"] = "shh", t["Ъ"] = '"', t["ъ"] = '"', t["Ы"] = "Y'", t["ы"] = "y'", t["Ь"] = "'", t["ь"] = "'", t["Э"] = "E'", t["э"] = "e'", t["Ю"] = "Yu", t["ю"] = "yu", t["Я"] = "Ya", t["я"] = "ya", 1 == document.getElementById("checkbox1").checked && (t["Ъ"] = "", t["ъ"] = "", t["Ы"] = "Y", t["ы"] = "y", t["Ь"] = "", t["ь"] = "", t["Э"] = "E", t["э"] = "e");
     var n = document.getElementById("select").value, e = e.split(""), o = "";
     for (i = 0; i < e.length; i++) null != t[e[i]] ? o += t[e[i]] : (0 == n && (o += e[i]), 1 == n && " " == e[i] && (o += "_"), 2 == n && " " == e[i] && (o += "-"), 0 != n && " " != e[i] && (o += e[i]));
@@ -4786,26 +4786,26 @@ $(document).ready(function () {
   }); // on
   $('.b-icon_type_paper-plane').on("click", function (e) {
     e.preventDefault(); // avoids calling preview.php
-    let agree = Number($('[name = "pagree"]').prop('checked'));
-    let data = {
+    var agree = Number($('[name = "pagree"]').prop('checked'));
+    var data = {
       "_token": $('[name = "_token"]').val(),
       "name": $('[name = "pname"]').val(),
       "email": $('[name = "pemail"]').val(),
       "agree": agree ? agree : null
     };
-    let url = $(this).closest('form').attr('action');
+    var url = $(this).closest('form').attr('action');
     sendRequestAjax(data, url);
   }); // on
   $('.b-subscribe__form-submit').on("click", function (e) {
     e.preventDefault(); // avoids calling preview.php
-    let agree = Number($('[name = "fagree"]').prop('checked'));
-    let data = {
+    var agree = Number($('[name = "fagree"]').prop('checked'));
+    var data = {
       "_token": $('[name = "_token"]').val(),
       "name": $('[name = "fname"]').val(),
       "email": $('[name = "femail"]').val(),
       "agree": agree ? agree : null
     };
-    let url = $(this).closest('form').attr('action');
+    var url = $(this).closest('form').attr('action');
     sendRequestAjax(data, url, true);
   }); // on
   function sendRequestAjax(data, url, closeForm=false) {
@@ -4830,6 +4830,6 @@ $(document).ready(function () {
     }); // ajax
   }
   String.prototype.trim = function() {  return this.replace(/^\s+|\s+$/g, '');  };
-  let searchInput = $('#search-form-5a81b431b9a62');
+  var searchInput = $('#search-form-5a81b431b9a62');
   searchInput.val(searchInput.val().trim());
 }); // ready
