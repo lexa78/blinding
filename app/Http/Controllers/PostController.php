@@ -8,6 +8,7 @@ use App\PostsRepository;
 use App\SearchQuery;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Cache;
 
 
@@ -28,7 +29,7 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
@@ -42,14 +43,14 @@ class PostController extends Controller
     /**
      * Display a listing of the resource in needle category.
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function postsInCategory($id)
     {
         $posts = Post::with(['comments' => function($query) {
             $query->where('accepted', 1);
         }])->publish()->whereHas('category', function (Builder $query) use ($id) {
-            $query->where('id', '=', $id);
+            $query->where('translate_name', '=', $id);
         })->orderby('created_at', 'desc')->paginate(self::POSTS_COUNT_ON_PAGE);
         $viewsCache = Cache::tags(['posts', 'views']);
         return view('client.posts-list', compact('posts', 'viewsCache'));
@@ -59,7 +60,7 @@ class PostController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function show($id)
     {

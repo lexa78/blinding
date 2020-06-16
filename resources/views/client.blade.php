@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="{{Storage::url('images/valknut.jpg')}}">
     <title>@yield('title')</title>
-    <link rel="manifest" href="/manifest.json" />
+{{--    <link rel="manifest" href="/manifest.json" />--}}
     <script>
       setTimeout(function() {
         var oneSignalScript = document.createElement('script');
@@ -132,7 +132,7 @@
                             <?php use App\Http\Helpers\PageHelper; $categories = PageHelper::getCategoryInfo(); ?>
                             @foreach($categories as $category)
                                 <li class="b-category-list__item b-category-list__item_id-1">
-                                    <a class="b-category-list__link b-typography__link" href="{{ URL::route('category.posts', ['id' => $category->id], false) }}">{{ $category->name }} ({{ $category->postsCount }})</a>
+                                    <a class="b-category-list__link b-typography__link" href="{{ URL::route('category.posts', ['id' => $category->translate_name], false) }}">{{ $category->name }} ({{ $category->postsCount }})</a>
                                 </li>
                             @endforeach
                         </ul>

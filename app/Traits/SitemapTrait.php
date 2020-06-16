@@ -24,6 +24,7 @@ trait SitemapTrait
                 Cache::forget(Category::CACHE_KEY);
             } elseif (isset($model->translate_title)) {
                 $slug = '/post/'. $model->translate_title;
+                Cache::forget(Category::CACHE_KEY);
                 Cache::forget(Post::CACHE_KEY);
             }
             if (!empty($slug)) {

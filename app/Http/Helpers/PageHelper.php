@@ -20,10 +20,11 @@ class PageHelper
         $categories = Cache::remember(Category::CACHE_KEY, self::TIME_SAVE_CACHE, function () {
             return DB::table('posts')
                 ->rightJoin('categories', 'categories.id', '=', 'posts.category_id')
-                ->select(DB::raw('COUNT(posts.id) as postsCount, categories.name, categories.id'))
+                ->select(DB::raw('COUNT(posts.id) as postsCount, categories.name, categories.translate_name'))
+                ->where('posts.published', 1)
                 ->groupBy('posts.category_id')
                 ->groupBy('categories.name')
-                ->groupBy('categories.id')
+                ->groupBy('categories.translate_name')
                 ->get();
         });
         return $categories;
