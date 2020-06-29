@@ -3,6 +3,11 @@ use App\Http\Helpers\PageHelper;
 if (!isset($query)) {
     $query = null;
 }
+if (!empty($id)) {
+    $canonical = '/category/'.$id;
+} else {
+    $canonical = '';
+}
 ?>
 @extends('client')
 
@@ -10,6 +15,7 @@ if (!isset($query)) {
 @section('description') Понемногу обо всем @endsection
 @section('css') <link href="{{ asset('/css/customPaginator.css') }}" rel="stylesheet"> @endsection
 @section('searchQuery') {{ $query }} @endsection
+@section('canonicalLink') <link href="{{PageHelper::getProtocol().$_SERVER['SERVER_NAME'].$canonical}}" rel="canonical"> @endsection
 
 @section('content')
     <div class="b-page__body-content b-grid__col b-grid__col_size_12 b-grid__col_size_lg-8">

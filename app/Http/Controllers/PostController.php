@@ -53,7 +53,7 @@ class PostController extends Controller
             $query->where('translate_name', '=', $id);
         })->orderby('created_at', 'desc')->paginate(self::POSTS_COUNT_ON_PAGE);
         $viewsCache = Cache::tags(['posts', 'views']);
-        return view('client.posts-list', compact('posts', 'viewsCache'));
+        return view('client.posts-list', compact('posts', 'viewsCache', 'id'));
     }
 
     /**

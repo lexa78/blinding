@@ -24,7 +24,7 @@
     </script>
 
     <meta name="description" content="@yield('description')">
-    <link href="https://blinding.ru/" rel="canonical">
+    @yield('canonicalLink')
     <link href="{{ asset('/css/blog.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/customBlog.css') }}" rel="stylesheet">
     @yield('css')

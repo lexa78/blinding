@@ -5,6 +5,7 @@ use App\Http\Helpers\PageHelper;
 
 @section('title') {{ $post->meta_title }} @endsection
 @section('description') {{ $post->meta_description }} @endsection
+@section('canonicalLink') <link href="{{PageHelper::getProtocol().$_SERVER['SERVER_NAME'].'/post/'.$post->translate_title}}" rel="canonical"> @endsection
 @section('content')
 <div class="b-page__body-content b-grid__col b-grid__col_size_12 b-grid__col_size_lg-8">
     <div itemscope="" itemtype="https://schema.org/Article">
